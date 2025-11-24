@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>948414846887-0gmljkes85fi45lcfv7d9bljd2jfijd6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.948414846887-0gmljkes85fi45lcfv7d9bljd2jfijd6</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>948414846887-0rruas4ftj7tb62dn8nbm6dr89uthna5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDAmCVB9mWCW85RUD4KJucmCY1z26lx1ok</string>
+	<key>GCM_SENDER_ID</key>
+	<string>948414846887</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dalvik.reports</string>
+	<key>PROJECT_ID</key>
+	<string>reports-go</string>
+	<key>STORAGE_BUCKET</key>
+	<string>reports-go.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:948414846887:ios:2f5f8529257413fab1c882</string>
+	<key>DATABASE_URL</key>
+	<string>https://reports-go.firebaseio.com</string>
+</dict>
+</plist>
