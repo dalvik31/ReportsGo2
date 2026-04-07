@@ -10,6 +10,8 @@ import FirebaseAuth
 
 struct MainView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @EnvironmentObject var ordersMainViewModel: OrdersMainViewModel
+    
         
     private var isPersistedLogin: Bool {
         UserDefaults.standard.bool(forKey: "isLoggedIn")
@@ -44,6 +46,15 @@ struct MainView: View {
                 dismissButton: .default(Text("Accept"))
             )
         }
+        .alert(item: orderErrorBinding) { OrdersError in
+            Alert(
+                title: Text("Error"),
+                message: Text(
+                    OrdersError.errorDescription ?? "An unknown error occurred"
+                ),
+                dismissButton: .default(Text("Accept"))
+            )
+        }
     }
         
    
@@ -51,9 +62,21 @@ struct MainView: View {
         Binding<IdentifiableError?>(
             get: {
                 guard let error = authViewModel.error else { return nil }
+    
                 return IdentifiableError(error: error)
             },
             set: { _ in authViewModel.error = nil }
+        )
+    }
+    
+    private var orderErrorBinding: Binding<IdentifiableOrderError?> {
+        Binding<IdentifiableOrderError?>(
+            get: {
+          
+                guard let error = ordersMainViewModel.error else { return nil }
+                return IdentifiableOrderError(error: error)
+            },
+            set: { _ in ordersMainViewModel.error = nil }
         )
     }
 }
@@ -66,6 +89,16 @@ struct IdentifiableError: Identifiable {
     var errorDescription: String? {
         error.localizedDescription
     }
+}
+
+struct IdentifiableOrderError: Identifiable {
+    let id = UUID()
+    let error: OrdersError
+    
+    var errorDescription: String? {
+        error.localizedDescription
+    }
+
 }
 
 

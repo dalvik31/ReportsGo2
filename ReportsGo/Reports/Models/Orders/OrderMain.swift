@@ -6,6 +6,7 @@
 //
 
 import FirebaseDatabase
+import SwiftUI
 
 struct OrderMain: Identifiable, Codable {
     var orderId: String? = ""
@@ -15,18 +16,27 @@ struct OrderMain: Identifiable, Codable {
     var nameOrder: String? = ""
     var dateOrder: String? = ""
     var orderDate: String? = ""
-    var orderStatus: OrderStatus? = OrderStatus.IN_PROGRESS
-    var orderSeason: OrderSeason? = OrderSeason.FALL
+    var orderStatus: OrderStatus? = OrderStatus.UNKNOWN
+    var orderSeason: OrderSeason? = OrderSeason.UNKNOWN
     var orderLists: [Order] = []
+
+    init() {
+        self.orderId = ""
+        self.nameOrder = "Primer pedido"
+        self.dateOrder = ""
+        self.orderDate = ""
+        self.orderStatus = OrderStatus.UNKNOWN
+        self.orderSeason = OrderSeason.UNKNOWN
+    }
 
     init?(snapshot: DataSnapshot) {
         guard let value = snapshot.value as? [String: Any],
-              let orderId = value["orderId"] as? String,
-              let nameOrder = value["nameOrder"] as? String,
-              let dateOrder = value["dateOrder"] as? String,
-              let orderDate = value["orderDate"] as? String,
-              let orderStatus = value["orderStatus"] as? String,
-              let orderSeason = value["orderSeason"] as? String
+            let orderId = value["orderId"] as? String,
+            let nameOrder = value["nameOrder"] as? String,
+            let dateOrder = value["dateOrder"] as? String,
+            let orderDate = value["orderDate"] as? String,
+            let orderStatus = value["orderStatus"] as? String,
+            let orderSeason = value["orderSeason"] as? String
         else {
             return nil
         }
@@ -38,11 +48,12 @@ struct OrderMain: Identifiable, Codable {
         self.orderStatus = OrderStatus(rawValue: orderStatus)
         self.orderSeason = OrderSeason(rawValue: orderSeason)
 
-        // Parse orderLists if present
         if let orderListsDict = value["orderLists"] as? [String: Any] {
             var parsedOrders: [Order] = []
             for (_, v) in orderListsDict {
-                if let dict = v as? [String: Any], let order = Order(value: dict) {
+                if let dict = v as? [String: Any],
+                    let order = Order(value: dict)
+                {
                     parsedOrders.append(order)
                 }
             }
@@ -51,12 +62,23 @@ struct OrderMain: Identifiable, Codable {
             self.orderLists = []
         }
     }
-    
+
     func getOrderProgress() -> Float {
         let completed = self.orderLists.filter { $0.orderBuy ?? false }.count
         let total = self.orderLists.count
-          let progress = total > 0 ? Double(completed) / Double(total) : 0
-        return  Float(progress * 100.0) as Float
+        let progress = total > 0 ? Double(completed) / Double(total) : 0
+        return Float(progress * 100.0) as Float
+    }
+
+    func getSeasonColor() -> Color {
+        switch self.orderSeason ?? .UNKNOWN {
+        case .FALL:
+            return Color.brown
+        case .SPRING:
+            return Color.green
+        case .UNKNOWN:
+            return Color.gray
+        }
     }
 
 }

@@ -6,5 +6,5 @@
 //
 
 protocol OrdersRepositoryProtocol {
-    func getMainOrders() async  -> [OrderMain]
+    func getMainOrders() async throws -> [OrderMain]
 }

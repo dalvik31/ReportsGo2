@@ -10,14 +10,19 @@ import Foundation
 enum OrderSeason: String, Codable {
     case FALL
     case SPRING
+    case UNKNOWN
     
     var description: String {
           switch self {
           case .FALL:
-              String(localized: "Otoño - Invierno")
+              String(localized: "fall")
           case .SPRING:
-              String(localized: "Primavera - Verano")
+              String(localized: "spring")
+          case .UNKNOWN:
+              String(localized: "seasonUnknown")
           }
-      }
+
+    }
+      
 }
 

@@ -15,26 +15,27 @@ struct HomeScreen: View {
     var body: some View {
         
         TabView {
-            OrdersScreen()
+            OrdersMainSreen()
                 .tabItem {
                     Image(systemName: "text.justify")
                     Text("Orders")
                 }
+                .navigationViewStyle(.stack)
            ClientsScreen()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Clients")
-                }
+                } .navigationViewStyle(.stack)
             ProductsScreen()
                 .tabItem {
                     Image(systemName: "cart.fill")
                     Text("Products")
-                }
+                } .navigationViewStyle(.stack)
             SalesScreen()
                 .tabItem {
                     Image(systemName: "dollarsign.circle.fill")
                     Text("Sales")
-                }
+                } .navigationViewStyle(.stack)
         }
     }
 }

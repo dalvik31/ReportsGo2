@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class DalvikNotesUITestsLaunchTests: XCTestCase {
+final class ReportsGoUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

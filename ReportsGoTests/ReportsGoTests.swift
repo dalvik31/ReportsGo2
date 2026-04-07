@@ -8,7 +8,7 @@
 import Testing
 @testable import DalvikNotes
 
-struct DalvikNotesTests {
+struct ReportsGoTests{
 
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.

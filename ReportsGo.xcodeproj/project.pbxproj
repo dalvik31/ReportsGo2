@@ -61,14 +61,14 @@
 			path = ReportsGo;
 			sourceTree = "<group>";
 		};
-		57C6B7802EC3BBF8003CBE1D /* DalvikNotesTests */ = {
+		57C6B7802EC3BBF8003CBE1D /* ReportsGoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DalvikNotesTests;
+			path = ReportsGoTests;
 			sourceTree = "<group>";
 		};
-		57C6B78A2EC3BBF8003CBE1D /* DalvikNotesUITests */ = {
+		57C6B78A2EC3BBF8003CBE1D /* ReportsGoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DalvikNotesUITests;
+			path = ReportsGoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -118,8 +118,8 @@
 			children = (
 				57BBBB6C2EC79385004FFF7F /* Localizable.xcstrings */,
 				57C6B7722EC3BBF6003CBE1D /* ReportsGo */,
-				57C6B7802EC3BBF8003CBE1D /* DalvikNotesTests */,
-				57C6B78A2EC3BBF8003CBE1D /* DalvikNotesUITests */,
+				57C6B7802EC3BBF8003CBE1D /* ReportsGoTests */,
+				57C6B78A2EC3BBF8003CBE1D /* ReportsGoUITests */,
 				57B2BA7A2ECE61B800206F4F /* Frameworks */,
 				57C6B7712EC3BBF6003CBE1D /* Products */,
 			);
@@ -182,7 +182,7 @@
 				57C6B77F2EC3BBF8003CBE1D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				57C6B7802EC3BBF8003CBE1D /* DalvikNotesTests */,
+				57C6B7802EC3BBF8003CBE1D /* ReportsGoTests */,
 			);
 			name = ReportsGoTests;
 			packageProductDependencies = (
@@ -205,7 +205,7 @@
 				57C6B7892EC3BBF8003CBE1D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				57C6B78A2EC3BBF8003CBE1D /* DalvikNotesUITests */,
+				57C6B78A2EC3BBF8003CBE1D /* ReportsGoUITests */,
 			);
 			name = ReportsGoUITests;
 			packageProductDependencies = (

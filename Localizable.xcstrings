@@ -7,11 +7,21 @@
     "%lld en existencia" : {
 
     },
-    "%lld Pedidos" : {
-
-    },
-    "0 Pedidos" : {
-
+    "%lld Orders" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(variableName)lld Orders"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(variableName)lld Pedidos"
+          }
+        }
+      }
     },
     "Accept" : {
       "localizations" : {
@@ -93,24 +103,43 @@
         }
       }
     },
-    "Done" : {
+    "createOrderTitle" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Done"
+            "value" : "Create order"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Completada"
+            "value" : "Crear pedido"
           }
         }
       }
     },
+    "done" : {
+
+    },
     "Edit" : {
 
+    },
+    "Edit %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit %1$(variableName)@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modificar %1$(variableName)@"
+          }
+        }
+      }
     },
     "Email" : {
       "extractionState" : "manual",
@@ -194,6 +223,9 @@
         }
       }
     },
+    "fall" : {
+
+    },
     "ForgotPassword" : {
       "localizations" : {
         "en" : {
@@ -226,7 +258,11 @@
         }
       }
     },
+    "inProgress" : {
+
+    },
     "InProgress" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -274,12 +310,44 @@
         }
       }
     },
+    "nameDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe the order"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe el pedido"
+          }
+        }
+      }
+    },
+    "nameOrder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What’s the order?"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Que pidieron?"
+          }
+        }
+      }
+    },
     "o" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "OR"
           }
         },
@@ -307,8 +375,22 @@
         }
       }
     },
-    "Otoño - Invierno" : {
-
+    "OrdersMainEmpty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No order lists were found"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontraron listas de pedidos"
+          }
+        }
+      }
     },
     "Password" : {
       "extractionState" : "manual",
@@ -326,9 +408,6 @@
           }
         }
       }
-    },
-    "Primavera - Verano" : {
-
     },
     "Products" : {
       "localizations" : {
@@ -393,6 +472,9 @@
           }
         }
       }
+    },
+    "seasonUnknown" : {
+
     },
     "SendVerificationEmail" : {
       "localizations" : {
@@ -494,6 +576,12 @@
           }
         }
       }
+    },
+    "spring" : {
+
+    },
+    "unknown" : {
+
     }
   },
   "version" : "1.1"

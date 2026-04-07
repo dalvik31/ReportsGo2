@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AvatarView: View {
     let initials: String
-    let statusColor: Color
+    //let statusColor: Color
     let size: CGFloat
     
     var body: some View {
@@ -26,14 +26,14 @@ struct AvatarView: View {
                 )
             
             // Status dot
-            Circle()
+           /* Circle()
                 .fill(statusColor)
                 .frame(width: size * 0.35, height: size * 0.35) // Adjust dot size
                 .overlay(
                     Circle()
                         .stroke(Color.white, lineWidth: 2) // Optional white border
                 )
-                .offset(x: 1, y: 1) // Optional offset for better positioning
+                .offset(x: 1, y: 1) // Optional offset for better positioning*/
         }
     }
 }

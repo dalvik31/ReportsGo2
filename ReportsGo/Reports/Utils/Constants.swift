@@ -10,4 +10,10 @@ class Constants {
     static let ORDERS_TABLE_NAME = "Orders"
     static let CLIENTS_TABLE_NAME = "Clients"
     static let PRODUCTS_TABLE_NAME = "Products"
+    
+    
+    class Date {
+        static let FORMAT_1 = "MMM d, h:mm a"
+        static let FORMAT_2 = "d MMM yy"
+    }
 }

@@ -19,9 +19,27 @@ struct Order: Identifiable, Codable {
     var orderGender: String? = ""
     var orderListId: String? = ""
     var orderName: String? = ""
-    var orderSeason: OrderSeason? = OrderSeason.FALL
+    var orderSeason: OrderSeason? = OrderSeason.UNKNOWN
     var orderSizeNumeric: Bool? = false
     var orderSize: String? = ""
+    var orderClientName: String? = ""
+    var orderClientId: String? = ""
+
+    init() {
+        self.orderId = ""
+        self.orderName = "Primer pedido"
+        self.orderBuy = false
+        self.orderColor = ""
+        self.orderColorCode = ""
+        self.orderDescription = ""
+        self.orderGender = ""
+        self.orderListId = ""
+        self.orderSeason = OrderSeason.UNKNOWN
+        self.orderSizeNumeric = false
+        self.orderSize = ""
+        self.orderClientId = ""
+        self.orderClientName = ""
+    }
 
     init?(value: [String: Any]?) {
         guard
@@ -36,9 +54,15 @@ struct Order: Identifiable, Codable {
             let orderSeason = value?["orderSeason"] as? String,
             let orderSizeNumeric = value?["orderSizeNumeric"] as? Bool,
             let orderSize = value?["orderSize"] as? String
+      
         else {
             return nil
         }
+        
+        let orderClientId = value?["orderClientId"] as? String
+        let orderClientName = value?["orderClientName"] as? String
+        
+        
         self.orderId = orderId
         self.orderName = orderName
         self.orderBuy = orderBuy
@@ -50,6 +74,8 @@ struct Order: Identifiable, Codable {
         self.orderSeason = OrderSeason(rawValue: orderSeason)
         self.orderSizeNumeric = orderSizeNumeric
         self.orderSize = orderSize
+        self.orderClientId = orderClientId
+        self.orderClientName = orderClientName
     }
 
 }

@@ -49,22 +49,21 @@ struct Client: Identifiable, Codable {
 
     }
     
-    func getClientDotBackground() -> Color {
-        // Swift's switch statement handles ranges concisely, similar to Kotlin's 'when'
-        switch self.geProgressLimit() {
+    func getClientCreditLimitRiskColor() -> Color {
+        switch self.geProgressCreditLimit() {
         case 0.0001...0.4:
-            return Color.green
+            return Color.PrimaryBlack
         case 0.4...0.8:
             return Color.yellow
         case 0.8...1.0:
             return Color.red
         default:
-            return Color.green
+            return Color.red
         }
     }
     
     
-    func geProgressLimit() -> Float {
+    func geProgressCreditLimit() -> Float {
         var limitCredit: Float = 0.0
         if ((self.debt ?? 0) > 0) {
             limitCredit = (self.debt ?? 0) / (self.limit ?? 0)

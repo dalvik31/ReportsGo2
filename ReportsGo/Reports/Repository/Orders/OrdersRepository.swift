@@ -18,7 +18,7 @@ class OrdersRepository: NSObject, OrdersRepositoryProtocol {
         self.databaseRef = Database.database().reference()
     }
 
-    internal func getMainOrders() async -> [OrderMain] {
+     func getMainOrders() async throws -> [OrderMain] {
         var ordersMain: [OrderMain] = []
         let questionPostsRef = self.databaseRef.child(
             Constants.FIRE_BASE_REALTIME_DATABASE_NAME
@@ -34,13 +34,23 @@ class OrdersRepository: NSObject, OrdersRepositoryProtocol {
             let children = snapshot.children.allObjects as? [DataSnapshot] ?? []
             for child in children {
                 if let order = OrderMain(snapshot: child) {
+                   
                     ordersMain.append(order)
                 }
             }
+         
+            
+            for orderMain in ordersMain {
+                
+                print("Number is \(orderMain.orderLists.count)")
+               
+            }
+           // print("mi pedidos count: \(ordersMain.count)")
             return ordersMain
+          
 
         } catch {
-            return ordersMain
+            throw OrdersError.orderMainEmpty
         }
     }
 

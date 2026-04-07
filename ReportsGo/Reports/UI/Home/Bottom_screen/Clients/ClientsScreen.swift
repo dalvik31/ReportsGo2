@@ -18,36 +18,50 @@ struct ClientsScreen: View {
             NavigationView {
                 List {
                     ForEach(clientsViewModel.clients) { client in
-                        // Main container (the card itself)
+
                         HStack(spacing: 12) {
-                            // Left side: Avatar with initials and status dot
-                            AvatarView(initials: client.clientFullName.initials, statusColor: client.getClientDotBackground(), size: 50)
-                            // Center: Name text
-                            Text(client.clientFullName)
-                                .font(.body)
-                                .foregroundColor(Color.PrimaryBlack)
 
-                            Spacer()  // Pushes content to the edges
+                            AvatarView(
+                                initials: client.clientFullName.initials,
+                                size: 50
+                            )
 
-                            // Right side: Phone number badge
-                            if !client.clientPhoneNumber.isEmpty {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color.PrimaryBlack)
-                                        .frame(height: 30)
+                            VStack {
+                                HStack {
+                                    Text(client.clientFullName)
+                                        .font(.subheadline)
+                                        .foregroundColor(
+                                            Color.PrimaryBlack
+                                        )
 
-                                    Text(client.clientPhoneNumber)
-                                        .font(.caption)
-                                        .foregroundColor(Color.PrimaryWhite)
-                                        .padding(.horizontal, 8)
+                                        .frame(
+                                            maxWidth: .infinity,
+                                            alignment: .leading
+                                        )
                                 }
-                                .fixedSize()  // Prevents the ZStack from expanding more than necessary
-                            }
-                         
-                        }
-            
-                  
+                                Text(
+                                    "\(client.debt ?? 0, format: .currency(code: "MXN"))"
+                                )
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(
+                                    client.getClientCreditLimitRiskColor()
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
 
+                            }
+                            if !client.clientPhoneNumber.isEmpty {
+                                Button("SignUp") {
+                                    //Task { await signInWithGoogle() }
+                                }
+                                .buttonStyle(
+                                    PrimaryIconButton(
+                                        systemName: "phone",
+                                        isSecondaryButton: true
+                                    )
+                                ).frame(width: 50, height: 50)
+                            }
+                        }
                     }
                 }
 
